@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.AppSplash" parent="Theme.SplashScreen">
+        <!-- Set the background color for the splash screen -->
+        <item name="android:windowSplashScreenBackground">@color/white</item>
+        <!-- Set the image for the splash screen -->
+        <item name="android:windowSplashScreenAnimatedIcon">@drawable/logo1</item>
+        <!-- Set the duration of the splash screen -->
+        <item name="android:windowSplashScreenAnimationDuration">1000</item>
+        <item name="android:windowFullscreen">true</item>
+        <!-- Status bar and Nav bar configs -->
+        <item name="android:statusBarColor" tools:targetApi="1">@color/white</item>
+        <item name="android:navigationBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="postSplashScreenTheme">@style/Theme.Chatapptrain</item>
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+
+
+
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+
+    </style>
+</resources>
