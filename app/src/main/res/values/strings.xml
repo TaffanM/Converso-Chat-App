@@ -4,4 +4,8 @@
     <string name="login_to_your_account">Login to your account</string>
     <string name="email_address">Email Address</string>
     <string name="password">Password</string>
+    <string name="sign_up_button">Sign In</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="nohaveacc">Dont have an account?</string>
+    <string name="signupnow"><u>Sign up now!</u></string>
 </resources>
