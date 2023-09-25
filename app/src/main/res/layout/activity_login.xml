@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Login">
 
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="250dp"
@@ -33,6 +34,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <EditText
+        android:autofillHints="emailAddress"
         android:id="@+id/inputEmail"
         android:layout_width="0dp"
         android:layout_height="60dp"
@@ -54,27 +56,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
-    <EditText
-        android:id="@+id/inputPassword"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="56dp"
-        android:layout_marginTop="17dp"
-        android:layout_marginEnd="56dp"
-        android:background="@drawable/custom_input"
-        android:drawableStart="@drawable/custom_password_icon"
-        android:drawablePadding="8dp"
-        android:ems="10"
-        android:fontFamily="@font/quicksand_medium"
-        android:hint="@string/password"
-        android:inputType="textPassword"
-        android:paddingStart="12dp"
-        android:paddingEnd="12dp"
-        android:textSize="14sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
+
+
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"
@@ -160,6 +143,29 @@
         app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/blob_1_" />
+
+
+    <EditText
+        android:id="@+id/inputPassword"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="56dp"
+        android:background="@drawable/custom_input"
+        android:drawableStart="@drawable/custom_password_icon"
+        android:drawableEnd="@drawable/custom_show_password"
+        android:drawablePadding="8dp"
+        android:ems="10"
+        android:fontFamily="@font/quicksand_medium"
+        android:hint="@string/password"
+        android:inputType="textPassword"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/inputEmail" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
