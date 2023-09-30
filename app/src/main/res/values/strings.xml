@@ -8,4 +8,8 @@
     <string name="forgot_password">Forgot password?</string>
     <string name="nohaveacc">Dont have an account?</string>
     <string name="signupnow"><u>Sign up now!</u></string>
+    <string name="createacc">Create your account</string>
+    <string name="username">Username</string>
+    <string name="confirm_password">Confirm password</string>
+    <string name="register_account">Register</string>
 </resources>
