@@ -9,7 +9,10 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class SignUp : AppCompatActivity() {
 
@@ -19,6 +22,7 @@ class SignUp : AppCompatActivity() {
     private lateinit var edtConfirmPassword: EditText
     private lateinit var signUpBtn: Button
     private lateinit var mAuth: FirebaseAuth
+    private lateinit var mDbRef: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +31,7 @@ class SignUp : AppCompatActivity() {
         setContentView(R.layout.activity_sign_up)
 
         mAuth = FirebaseAuth.getInstance()
+        FirebaseApp.initializeApp(this)
 
         edtEmailSign = findViewById(R.id.inputEmailSign)
         edtUsername = findViewById(R.id.inputUsername)
@@ -57,7 +62,7 @@ class SignUp : AppCompatActivity() {
 
             if (allFormsFilled) {
                 if (password == confirmPassword) {
-                    signup(email, password)
+                    signup(email, username, password)
                 } else {
                     Toast.makeText(this@SignUp, "Password and confirm password don't match please try again", Toast.LENGTH_LONG).show()
                 }
@@ -71,15 +76,21 @@ class SignUp : AppCompatActivity() {
 
     }
 
-    private fun signup(email: String, password: String){
+    private fun signup(email: String, name: String, password: String){
         mAuth.createUserWithEmailAndPassword(email, password)
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
+                    addUserToDatabase(email, name, mAuth.currentUser?.uid!!)
                     val intent = Intent(this@SignUp, MainActivity::class.java)
                     startActivity(intent)
                 } else {
                     Toast.makeText(this@SignUp, "Error occured please try again", Toast.LENGTH_LONG).show()
                 }
             }
+    }
+
+    private fun addUserToDatabase(email: String, name: String, uid: String){
+        mDbRef = FirebaseDatabase.getInstance().getReference()
+        mDbRef.child("user").child(uid).setValue(User(name, email, uid))
     }
 }
