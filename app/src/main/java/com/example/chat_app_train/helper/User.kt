@@ -1,4 +1,4 @@
-package com.example.chat_app_train
+package com.example.chat_app_train.helper
 
 class User {
     var name: String? = null

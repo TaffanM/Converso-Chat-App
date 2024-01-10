@@ -12,4 +12,14 @@
     <string name="username">Username</string>
     <string name="confirm_password">Confirm password</string>
     <string name="register_account">Register</string>
+    <string name="message">Messages</string>
+    <string name="pp">Profile Picture</string>
+    <string name="first_title">Get Started with Converso</string>
+    <string name="second_title">Chat with AI</string>
+    <string name="third_title">Instant Connectivity</string>
+    <string name="first_desc_ob">Get ready to chat with friends, family, and new people! Converso is the easiest way to connect and stay in touch.</string>
+    <string name="second_desc_ob">Elevate your conversations with our AI assistant. From answering queries to providing recommendations, our AI is here to make your chatting experience smarter and more efficient.</string>
+    <string name="third_desc_ob">Connect instantly with anyone, anywhere in the world. Say goodbye to delays and hello to real-time conversations, now with the added bonus of AI assistance.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

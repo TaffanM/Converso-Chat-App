@@ -1,14 +1,15 @@
-package com.example.chat_app_train
+package com.example.chat_app_train.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.Window
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
+import com.example.chat_app_train.R
+import com.example.chat_app_train.helper.User
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -81,8 +82,10 @@ class SignUp : AppCompatActivity() {
             .addOnCompleteListener(this) { task ->
                 if (task.isSuccessful) {
                     addUserToDatabase(email, name, mAuth.currentUser?.uid!!)
-                    val intent = Intent(this@SignUp, MainActivity::class.java)
+                    val intent = Intent(this@SignUp, Login::class.java)
+                    Toast.makeText(this@SignUp, "Sign Up is succeed, please login", Toast.LENGTH_LONG).show()
                     startActivity(intent)
+
                 } else {
                     Toast.makeText(this@SignUp, "Error occured please try again", Toast.LENGTH_LONG).show()
                 }
