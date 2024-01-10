@@ -1,21 +1,19 @@
-package com.example.chat_app_train
+package com.example.chat_app_train.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.method.PasswordTransformationMethod
 import android.view.MotionEvent
-import android.view.View
 import android.view.Window
-import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.example.chat_app_train.R
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.ktx.Firebase
 
 class Login : AppCompatActivity() {
     private lateinit var edtEmail: EditText
@@ -28,7 +26,6 @@ class Login : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        installSplashScreen()
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         supportActionBar?.hide()
         setContentView(R.layout.activity_login)
@@ -96,12 +93,16 @@ class Login : AppCompatActivity() {
         if(isPasswordVisible) {
             // hide password
             edtPassword.transformationMethod = PasswordTransformationMethod.getInstance()
-            edtPassword.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.custom_password_icon, 0, R.drawable.baseline_visibility_24, 0)
+            edtPassword.setCompoundDrawablesRelativeWithIntrinsicBounds(
+                R.drawable.custom_password_icon, 0,
+                R.drawable.baseline_visibility_24, 0)
             isPasswordVisible = false
         } else {
             // show password
             edtPassword.transformationMethod = null
-            edtPassword.setCompoundDrawablesRelativeWithIntrinsicBounds(R.drawable.custom_password_icon, 0, R.drawable.baseline_visibility_off_24, 0)
+            edtPassword.setCompoundDrawablesRelativeWithIntrinsicBounds(
+                R.drawable.custom_password_icon, 0,
+                R.drawable.baseline_visibility_off_24, 0)
             isPasswordVisible = true
         }
 
